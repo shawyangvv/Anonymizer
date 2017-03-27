@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="sqlite">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/sqlite.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://$PROJECT_DIR$" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>
