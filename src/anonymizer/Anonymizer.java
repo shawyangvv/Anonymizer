@@ -16,6 +16,7 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 
 import databasewrapper.QueryResult;
+import databasewrapper.SqLiteWrapper;
 import databasewrapper.DatabaseWrapper;
 
 
@@ -200,6 +201,7 @@ public abstract class Anonymizer {
     }
 
     public static void anonymizeDataset(Configuration conf) throws Exception {
+    	SqLiteWrapper.initialize(conf);
         Anonymizer anon = null;
         switch(conf.anonMethod) {
             case Configuration.METHOD_MONDRIAN:
