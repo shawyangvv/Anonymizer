@@ -3,6 +3,7 @@
 <config method = 'Mondrian' k = '10' >
 	<input filename='dataset/new.data' separator=','/>
 	<output filename='census-income_Anon.csv'/>
+	<sqlitefile path='dbdir/Anonymizer.db'/>
 	<kid>
 		<att index='1' name='att1'/>
 		<att index='2' name='att2'/>

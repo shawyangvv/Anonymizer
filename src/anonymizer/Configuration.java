@@ -30,6 +30,7 @@ public class Configuration {
     public String inputFilename = null;
     public String separator = ",";
     public String outputFilename = null;
+    public String sqlitefilePath = null;
 
     public LinkedList<Integer> kidAtts = new LinkedList<Integer>();
     public SensitiveAttribute[] sensitiveAtts = null;
@@ -124,6 +125,14 @@ public class Configuration {
                             setOutputFilename(nodeAtts.item(j).getNodeValue());
                         }
                     }
+                } else if(child.getNodeName().equals("sqlitefile")) {
+                    NamedNodeMap nodeAtts = child.getAttributes();
+                    for(int j = 0; j < nodeAtts.getLength(); j++) {
+                        String attName = nodeAtts.item(j).getNodeName();
+                        if(attName.equals("path")) {
+                        	setSqlitefilePath(nodeAtts.item(j).getNodeValue());
+                        }
+                    }
                 } else if(child.getNodeName().equals("kid")) {
                     kid = child;
                     parseKidAtts(kid);
@@ -203,6 +212,10 @@ public class Configuration {
 
     public void setOutputFilename(String filename) throws Exception {
         outputFilename = filename;
+    }
+    
+    public void setSqlitefilePath(String path) {
+    	sqlitefilePath = path;
     }
 
     public void setMethod(String method){
